@@ -1,3 +1,5 @@
+Warning! This was all invented by a generative artificial intelligence under the guise of Copilot. Use with caution, or better yet, don't use it. Think for yourself, create for yourself, be human. Grow!
+
 # RepoRadar 🔍
 
 RepoRadar tracks GitHub repository transfers in real time and turns them into early M&A signals. Startups see what tech and teams are getting scooped up; investors get alerts on stealth acquisitions and acqui-hires before the press release.
