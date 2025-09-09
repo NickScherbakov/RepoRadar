@@ -205,6 +205,21 @@ def stats():
     })
 
 
+@app.route('/export')
+def export_data():
+    """Export all transfer data as JSON for dashboard generation."""
+    try:
+        transfers = db.get_transfers(limit=1000)  # Получить последние 1000 переносов
+        return jsonify({
+            'status': 'success',
+            'data': transfers,
+            'timestamp': datetime.now().isoformat()
+        })
+    except Exception as e:
+        logger.error(f"Export error: {e}")
+        return jsonify({'status': 'error', 'message': str(e)}), 500
+
+
 @app.route('/health')
 def health():
     """Health check endpoint."""
