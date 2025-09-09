@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  reporadar:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./config.yaml:/app/config.yaml:ro
+      - reporadar_data:/app/data
+    restart: unless-stopped
+    environment:
+      - DEBUG=false
+      - DATABASE_PATH=/app/data/reporadar.db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  reporadar_data:

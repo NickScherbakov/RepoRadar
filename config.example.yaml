@@ -1,0 +1,32 @@
+# RepoRadar Configuration
+github:
+  token: "your_github_token_here"  # GitHub Personal Access Token
+  
+repositories:
+  # List of specific repositories to track
+  - "facebook/react"
+  - "microsoft/vscode"
+  
+organizations:
+  # List of organizations to track all repos
+  - "openai"
+  - "anthropic"
+
+slack:
+  webhook_url: "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK"  # Optional
+
+# Polling interval in minutes (default: 15)
+poll_interval: 15
+
+# Database file path
+database_path: "reporadar.db"
+
+# Alert thresholds
+alerts:
+  min_stars: 1000  # Alert for repos with >= this many stars
+  target_buyers:   # Alert when these organizations acquire repos
+    - "google"
+    - "meta"
+    - "amazon"
+    - "microsoft" 
+    - "apple"
